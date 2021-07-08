@@ -1,0 +1,34 @@
+.mainMenu{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  height: 100%;
+  width: 47.4%;
+}
+
+.mainMenu__menuClosed{
+  pointer-events: none;
+}
+
+.mainMenu__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.mainMenu__container a{
+  font-size:5rem;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+
+.mainMenu__menuOpen{
+  opacity:1 !important;
+}

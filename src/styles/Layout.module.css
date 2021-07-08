@@ -1,0 +1,26 @@
+.container{
+  position:relative;
+  background:black;
+}
+
+.main{
+  height:100vh;
+}
+
+.layout__menu{
+  position:absolute;
+  right: 5rem;
+  top: 4rem;
+  display:flex;
+  align-items: center;
+  gap:1rem;
+}
+
+.layout__menu p{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.menuOpen{
+  background:blue;
+}

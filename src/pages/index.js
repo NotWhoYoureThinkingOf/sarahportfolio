@@ -1,59 +1,55 @@
-import { Counter } from '../features/counter/Counter'
-import styles from '../styles/Home.module.css'
-import Head from 'next/head'
+import styles from "../styles/Home.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  grabMenuOpen,
+  releaseMenuOpen,
+  selectMenuOpen,
+} from "../features/menuOpenSlice";
+import MainMenu from "../components/MainMenu";
 
 export default function Home() {
+  const menuIsOpen = useSelector(selectMenuOpen);
+  const dispatch = useDispatch();
+
+  const closeMenu = () => {
+    dispatch(releaseMenuOpen());
+  };
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Redux Toolkit</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <header className={styles.header}>
-        <img src="/logo.svg" className={styles.logo} alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className={styles.link}
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className={styles.link}
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className={styles.link}
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className={styles.link}
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div className={styles.home}>
+      <div
+        className={`${styles.home__banner} ${
+          menuIsOpen && styles.home__menuOpen
+        }`}
+        onClick={closeMenu}
+      >
+        <div className={styles.home__bannerLeft}>
+          <div className={styles.home__bannerLeftContainer}>
+            <div className={styles.home__firstName}>
+              <Image src="/sarah-logo-black.jpg" width={650} height={388} />
+            </div>
+            <div className={styles.home__line}></div>
+            <p>
+              Multimedia artist with focus on oil and acrylic, Sarah Adams.
+              Western Massachusetts based artist, <br />
+              abstract, nature and portrait art. Vivid colors, commissions
+              accepted.
+            </p>
+            <Link href="/work">
+              <button className={styles.home__bannerLeftButton}>
+                View Work
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className={styles.home__bannerRight}>
+          <div className={styles.home__bannerRightContainer}>
+            <Image src="/trees.jpg" width={716.625} height={923.625} />
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
