@@ -88,3 +88,43 @@
     width: 539.7px;
   }
 }
+
+@media screen and (max-width: 1600px) {
+  .home__banner{
+    gap:0rem;
+  }
+
+  .home__firstName{
+    transform:scale(.75)
+  }
+
+  .home__bannerLeftContainer{
+    align-items: flex-end;
+  }
+
+  .home__bannerLeftBottom{
+    width: 79%;
+  }
+
+  .home__bannerLeftBottom p {
+    /* width:86% */
+  }
+
+  .home__bannerLeftBottom p br{
+    display:none;
+  }
+  
+  .home__line {
+    margin: 0px 0 30px;
+  }
+
+  .home__bannerLeftButton{
+    transform: scale(.75);
+    margin-left: -1.5rem;
+    margin-top: 15px;
+  }
+
+  .home__bannerRightContainer{
+    transform:scale(.75)
+  }
+}

@@ -34,18 +34,21 @@ export default function Home() {
                 objectFit="cover"
               />
             </div>
-            <div className={styles.home__line}></div>
-            <p>
-              Multimedia artist with focus on oil and acrylic, Sarah Adams.
-              Western Massachusetts based artist, <br />
-              abstract, nature and portrait art. Vivid colors, commissions
-              accepted.
-            </p>
-            <Link href="/work">
-              <button className={styles.home__bannerLeftButton}>
-                View Work
-              </button>
-            </Link>
+
+            <div className={styles.home__bannerLeftBottom}>
+              <div className={styles.home__line}></div>
+              <p>
+                Multimedia artist with focus on oil and acrylic, Sarah Adams.
+                Western Massachusetts based artist, <br />
+                abstract, nature and portrait art. Vivid colors, commissions
+                accepted.
+              </p>
+              <Link href="/work">
+                <button className={styles.home__bannerLeftButton}>
+                  View Work
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
         <div className={styles.home__bannerRight}>
