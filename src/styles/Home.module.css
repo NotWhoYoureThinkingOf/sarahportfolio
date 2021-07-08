@@ -5,7 +5,7 @@
 .home__banner{
   display:flex;
   height: 100vh;
-  gap:10rem;
+  gap:7rem;
   background:white;
   transform-origin: right;
   transition: all .5s ease; 
@@ -19,7 +19,7 @@
 }
 
 .home__bannerLeft{
-  flex:0.5;
+  flex:0.53;
   display:flex;
   justify-content: flex-end;
 }
@@ -29,6 +29,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+.home__firstName{
+  position:relative;
+  width:949.875px;
+  height:614.25px;
 }
 
 .home__line{
@@ -56,9 +62,9 @@
 }
 
 .home__bannerRight{
-  flex:0.5;
+  flex:0.47;
   display:flex;
-  justify-content: flex-start;
+  align-items:center;
 }
 
 .home__bannerRightContainer{
@@ -66,4 +72,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position:relative;
+  height:923.625px;
+  width:719.625px;
+}
+
+@media screen and (max-width: 1950px) {
+  .home__firstName{
+    width:712.4px;
+    height:460.6px;
+  }
+
+  .home__bannerRightContainer{
+    height: 692.7px;
+    width: 539.7px;
+  }
 }

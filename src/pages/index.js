@@ -28,7 +28,11 @@ export default function Home() {
         <div className={styles.home__bannerLeft}>
           <div className={styles.home__bannerLeftContainer}>
             <div className={styles.home__firstName}>
-              <Image src="/sarah-logo-black.jpg" width={650} height={388} />
+              <Image
+                src="/sarah-logo-black.jpg"
+                layout="fill"
+                objectFit="cover"
+              />
             </div>
             <div className={styles.home__line}></div>
             <p>
@@ -46,7 +50,7 @@ export default function Home() {
         </div>
         <div className={styles.home__bannerRight}>
           <div className={styles.home__bannerRightContainer}>
-            <Image src="/trees.jpg" width={716.625} height={923.625} />
+            <Image src="/trees.jpg" layout="fill" objectFit="cover" />
           </div>
         </div>
       </div>
