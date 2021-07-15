@@ -91,9 +91,7 @@ const work = () => {
               <div className={styles.work__subjects}>
                 {works.map((work) => (
                   <div
-                    className={`${styles.work__eorzea} ${
-                      styles.work__subject
-                    } ${
+                    className={` ${styles.work__subject} ${
                       work.category.includes(category) && styles.work__included
                     }`}
                   >

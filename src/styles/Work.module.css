@@ -89,8 +89,10 @@
 
 .work__subjects{
   display:flex;
-  gap:1rem;
   flex-wrap: wrap;
+  /* display:grid; */
+  /* grid-template-columns: repeat(4, 1fr); */
+  gap:1rem;  
   max-height: 816px;
   overflow-y:scroll;
 }
@@ -108,19 +110,35 @@
   background-color: #ddd;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
   /* border: 3px solid orange;  creates padding around scroll thumb */
+  /* cursor:pointer; */
 }
 
 .work__subject{
-  width:25rem;
-  height:25rem;
-  position:relative;
+  width:0rem;
+  height:0rem;
+  opacity:0;
+  /* visibility:hidden; */
+  /* display:none; */
+  /* position:relative; */
   overflow:hidden;
   cursor:pointer;
-  display:none;
+  position:absolute;
+  /* grid-column: 0/0; */
+  /* display:none; */
+  /* z-index:0; */
+  transition:all .5s ease-in-out;
+  
 }
 
 .work__included{
-  display:block;
+  width:25rem;
+  height:25rem;
+  opacity:1;
+  /* visibility:visible; */
+  position:relative;
+  /* opacity:1; */
+  /* z-index:10; */
+  /* transition: opacity .1s ease; */
 }
 
 .work__subjectTitle{
