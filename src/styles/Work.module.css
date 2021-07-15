@@ -50,6 +50,7 @@
 
 .work__title{
   font-size:3.5rem;
+  position:sticky;
 }
 
 .work__line{
@@ -67,15 +68,30 @@
 .work__categories{
   display:flex;
   gap:1rem;
-  margin-bottom:1rem;
+  margin-bottom:2rem;
   
+}
+
+.work__category{
+  cursor:pointer;
+}
+
+.work__underline{
+  width:0%;
+  background:#111;
+  height:3px;
+  transition:width .2s ease-in-out;
+}
+
+.work__category:hover .work__underline{
+  width:100%;
 }
 
 .work__subjects{
   display:flex;
   gap:1rem;
   flex-wrap: wrap;
-  height:59%;
+  max-height: 816px;
   overflow-y:scroll;
 }
 
@@ -100,9 +116,12 @@
   position:relative;
   overflow:hidden;
   cursor:pointer;
+  display:none;
 }
 
-
+.work__included{
+  display:block;
+}
 
 .work__subjectTitle{
   position:absolute;

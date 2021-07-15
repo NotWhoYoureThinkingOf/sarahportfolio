@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "../styles/Work.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { releaseMenuOpen, selectMenuOpen } from "../features/menuOpenSlice";
 import MainMenu from "../components/MainMenu";
+import works from "../../works";
 
 const work = () => {
+  const [category, setCategory] = useState("all");
   const dispatch = useDispatch();
   const menuIsOpen = useSelector(selectMenuOpen);
 
@@ -43,13 +45,65 @@ const work = () => {
             <div className={styles.work__line}></div>
             <div className={styles.work__content}>
               <div className={styles.work__categories}>
-                <p>All</p>
-                <p>Paintings</p>
-                <p>Photography</p>
-                <p>Sculptures</p>
+                <div
+                  className={styles.work__category}
+                  onClick={() => setCategory("all")}
+                >
+                  <p>All</p>
+                  <div className={styles.work__underline}></div>
+                </div>
+                <div
+                  className={styles.work__category}
+                  onClick={() => setCategory("paintings")}
+                >
+                  <p>Paintings</p>
+                  <div className={styles.work__underline}></div>
+                </div>
+                <div
+                  className={styles.work__category}
+                  onClick={() => setCategory("photography")}
+                >
+                  <p>Photography</p>
+                  <div className={styles.work__underline}></div>
+                </div>
+                <div
+                  className={styles.work__category}
+                  onClick={() => setCategory("sculptures")}
+                >
+                  <p>Sculptures</p>
+                  <div className={styles.work__underline}></div>
+                </div>
+                <div
+                  className={styles.work__category}
+                  onClick={() => setCategory("drawings")}
+                >
+                  <p>Drawings</p>
+                  <div className={styles.work__underline}></div>
+                </div>
+                <div
+                  className={styles.work__category}
+                  onClick={() => setCategory("mixed")}
+                >
+                  <p>Mixed</p>
+                  <div className={styles.work__underline}></div>
+                </div>
               </div>
               <div className={styles.work__subjects}>
-                <div
+                {works.map((work) => (
+                  <div
+                    className={`${styles.work__eorzea} ${
+                      styles.work__subject
+                    } ${
+                      work.category.includes(category) && styles.work__included
+                    }`}
+                  >
+                    <div className={styles.work__subjectTitle}>
+                      {work.title}
+                    </div>
+                    <Image src={work.image} layout="fill" objectFit="cover" />
+                  </div>
+                ))}
+                {/* <div
                   className={`${styles.work__eorzea} ${styles.work__subject}`}
                 >
                   <div className={styles.work__subjectTitle}>
@@ -204,7 +258,7 @@ const work = () => {
                     layout="fill"
                     objectFit="cover"
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
