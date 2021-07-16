@@ -2,7 +2,7 @@
   z-index:10;
   background:white;
   transform-origin: right;
-  transition: all .5s ease; 
+  transition: transform .5s ease; 
   height: 100vh;
 }
 
