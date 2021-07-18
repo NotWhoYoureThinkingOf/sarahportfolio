@@ -7,6 +7,24 @@
   height:100vh;
 }
 
+.logo{
+  position:absolute;
+  flex:0.15;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  padding-left: 9rem;
+}
+
+.logo__firstName{
+  position:relative
+}
+
+.logo__lastName{
+  transform: translateY(19px);
+  position:relative;
+}
+
 .layout__menu{
   position:absolute;
   right: 5rem;

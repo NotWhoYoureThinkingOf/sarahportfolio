@@ -6,6 +6,11 @@
   height: 100vh;
 }
 
+.categoryPage__menuOpen{
+  transform: scale(1) perspective(250px) rotateY(-5deg);
+  cursor:pointer;
+}
+
 .categoryPage__container{
   display: flex;
   flex-direction: column;

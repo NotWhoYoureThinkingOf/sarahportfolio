@@ -7,8 +7,6 @@ import { useSelector } from "react-redux";
 const MainMenu = () => {
   const menuIsOpen = useSelector(selectMenuOpen);
 
-  console.log("menu open", menuIsOpen);
-
   return (
     <div
       className={`${styles.mainMenu} ${

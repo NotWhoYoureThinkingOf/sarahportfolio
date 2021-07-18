@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "../styles/Work.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { releaseMenuOpen, selectMenuOpen } from "../features/menuOpenSlice";
@@ -11,10 +12,13 @@ const work = () => {
   const [category, setCategory] = useState("all");
   const dispatch = useDispatch();
   const menuIsOpen = useSelector(selectMenuOpen);
+  const router = useRouter();
 
   const closeMenu = () => {
     dispatch(releaseMenuOpen());
   };
+
+  console.log("query", router.query);
 
   return (
     <div
@@ -91,13 +95,23 @@ const work = () => {
               </div>
               <div className={styles.work__subjects}>
                 {works.map((work) => (
-                  <Link href={work.url}>
+                  <Link
+                    href={{
+                      pathname: "/category",
+                      query: {
+                        title: work.title,
+                        imageFolder: work.imageFolder,
+                        images: work.images,
+                      },
+                    }}
+                    as={work.url}
+                    key={work.title}
+                  >
                     <a
                       className={` ${styles.work__subject} ${
                         work.category.includes(category) &&
                         styles.work__included
                       }`}
-                      key={work.title}
                     >
                       <div className={styles.work__subjectTitle}>
                         {work.title}
