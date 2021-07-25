@@ -1,10 +1,11 @@
 const works = [
   {
+    id: 1,
     title: "Landscapes of Eorzea",
     image: "/art/eorzea1.jpg",
     category: ["paintings", "all"],
     url: "/landscapes_of_eorzea",
-    imageFolder: "/art/Landscapes_Of_Eorzea",
+    imageFolder: "art/Landscapes_Of_Eorzea",
     images: [
       "landscape1.jpg",
       "landscape2.jpg",
@@ -13,11 +14,12 @@ const works = [
     ],
   },
   {
+    id: 2,
     title: "Tor(e)ment - BFA Thesis Exhibition",
     image: "/art/thesis1.jpg",
     category: ["mixed", "all"],
     url: "/thesis",
-    imageFolder: "/art/Thesis",
+    imageFolder: "art/Thesis",
     images: [
       "1.jpg",
       "2.jpg",
@@ -46,11 +48,12 @@ const works = [
     ],
   },
   {
+    id: 3,
     title: "Portrait Paintings",
     image: "/art/portraitpainting1.jpg",
     category: ["paintings", "all"],
     url: "/portrait_paintings",
-    imageFolder: "/art/Portrait_Paintings",
+    imageFolder: "art/Portrait_Paintings",
     images: [
       "portraitpainting1.jpg",
       "portraitpainting2.jpg",
@@ -65,11 +68,12 @@ const works = [
     ],
   },
   {
+    id: 4,
     title: "Nature Paintings",
     image: "/art/naturepainting1.jpg",
     category: ["paintings", "all"],
     url: "/nature_paintings",
-    imageFolder: "/art/Nature_Paintings",
+    imageFolder: "art/Nature_Paintings",
     images: [
       "naturepainting1.jpg",
       "naturepainting2.jpg",
@@ -80,11 +84,12 @@ const works = [
     ],
   },
   {
+    id: 5,
     title: "Misc. Photography",
     image: "/art/miscphoto1.jpg",
     category: ["photography", "all"],
     url: "/misc_photography",
-    imageFolder: "/art/Misc_Photography",
+    imageFolder: "art/Misc_Photography",
     images: [
       "miscphoto1.jpg",
       "miscphoto2.jpg",
@@ -94,19 +99,21 @@ const works = [
     ],
   },
   {
+    id: 6,
     title: "Digital Paintings",
     image: "/art/digitalpainting1.jpg",
     category: ["paintings", "all"],
     url: "/digital_paintings",
-    imageFolder: "/art/Digital_Paintings",
+    imageFolder: "art/Digital_Paintings",
     images: ["digitalpainting1.jpg", "digitalpainting2.jpg"],
   },
   {
+    id: 7,
     title: "Nature Photography",
     image: "/art/naturephoto1.jpg",
     category: ["photography", "all"],
     url: "/nature_photography",
-    imageFolder: "/art/Nature_Photography",
+    imageFolder: "art/Nature_Photography",
     images: [
       "naturephoto1.jpg",
       "naturephoto2.jpg",
@@ -120,11 +127,12 @@ const works = [
     ],
   },
   {
+    id: 8,
     title: "Pet Photography",
     image: "/art/petphoto1.jpg",
     category: ["photography", "all"],
     url: "/pet_photography",
-    imageFolder: "/art/Pet_Photography",
+    imageFolder: "art/Pet_Photography",
     images: [
       "petphoto1.jpg",
       "petphoto2.jpg",
@@ -134,11 +142,12 @@ const works = [
     ],
   },
   {
+    id: 9,
     title: "Misc. Paintings",
     image: "/art/miscpainting1.jpg",
     category: ["paintings", "all"],
     url: "/misc_paintings",
-    imageFolder: "/art/Misc_Paintings",
+    imageFolder: "art/Misc_Paintings",
     images: [
       "miscpainting1.jpg",
       "miscpainting2.jpg",
@@ -148,6 +157,7 @@ const works = [
     ],
   },
   {
+    id: 10,
     title: " Misc. Mixed Media",
     image: "/art/miscmixed1.jpg",
     category: ["mixed", "all"],
@@ -156,11 +166,12 @@ const works = [
     images: ["mixed1.jpg", "mixed2.jpg", "mixed3.jpg", "mixed4.jpg"],
   },
   {
+    id: 11,
     title: "Plaster Sculptures",
     image: "/art/plastersculpture1.jpg",
     category: ["sculptures", "all"],
     url: "/plaster_sculptures",
-    imageFolder: "/art/Plaster_Sculptures",
+    imageFolder: "art/Plaster_Sculptures",
     images: [
       "plaster1.jpg",
       "plaster2.jpg",
@@ -171,11 +182,12 @@ const works = [
     ],
   },
   {
+    id: 12,
     title: "Portrait Photography",
     image: "/art/portraitphoto1.jpg",
     category: ["photography", "all"],
     url: "/portrait_photography",
-    imageFolder: "/art/Portrait_Photography",
+    imageFolder: "art/Portrait_Photography",
     images: [
       "portraitphoto1.jpg",
       "portraitphoto2.jpg",
@@ -190,11 +202,12 @@ const works = [
     ],
   },
   {
+    id: 13,
     title: "Misc. Drawings",
     image: "/art/miscdrawing1.jpg",
     category: ["drawings", "all"],
     url: "/misc_drawings",
-    imageFolder: "/art/Misc_Drawings",
+    imageFolder: "art/Misc_Drawings",
     images: [
       "miscdrawing1.jpg",
       "miscdrawing2.jpg",

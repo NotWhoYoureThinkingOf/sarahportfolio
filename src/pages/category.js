@@ -4,11 +4,13 @@ import { useRouter } from "next/router";
 import styles from "../styles/CategoryPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { releaseMenuOpen, selectMenuOpen } from "../features/menuOpenSlice";
+import { selectCategory } from "../features/categorySlice";
 
 const category = () => {
   const dispatch = useDispatch();
   const menuIsOpen = useSelector(selectMenuOpen);
-  const { query } = useRouter();
+  const chosenCategory = useSelector(selectCategory);
+  // const { query } = useRouter();
   const [images, setImages] = useState([]);
   const [imageFolder, setImageFolder] = useState("");
 
@@ -16,14 +18,16 @@ const category = () => {
     dispatch(releaseMenuOpen());
   };
 
-  useEffect(() => {
-    setImages(query.images);
-    setImageFolder(query.imageFolder);
-  }, []);
+  // useEffect(() => {
+  //   setImages(query.images);
+  //   setImageFolder(query.imageFolder);
+  // }, [query]);
 
   // console.log("query", query);
   // console.log("images", query.images);
   // console.log("image folder", query.imageFolder);
+
+  console.log("redux category", chosenCategory);
 
   return (
     <div
@@ -36,14 +40,14 @@ const category = () => {
         <div className={styles.categoryPage__pageHeader}>
           <div className={styles.categoryPage__firstName}>
             <Image
-              src="/sarah-logo(first-black).jpg"
+              src="/sarah-logo(first-black).png"
               width={162.5}
               height={97}
             />
           </div>
           <div className={styles.categoryPage__lastName}>
             <Image
-              src="/sarah-logo(last-black).jpg"
+              src="/sarah-logo(last-black).png"
               width={155.925}
               height={130.35}
             />
@@ -51,15 +55,17 @@ const category = () => {
         </div>
         <div className={styles.categoryPage__body}>
           <div className={styles.categoryPage__bodyContainer}>
-            <h2>{query.title}</h2>
+            <h2>{chosenCategory?.title}</h2>
             <div className={styles.categoryPage_images}>
-              {images.map((image) => (
-                <Image
-                  src={`${imageFolder}/${image}`}
-                  height={250}
-                  width={250}
-                  alt="image"
-                />
+              {chosenCategory?.images.map((image, i) => (
+                <div className={styles.categoryPage__image}>
+                  <Image
+                    src={`/${chosenCategory?.imageFolder}/${image}`}
+                    height={250}
+                    width={250}
+                    alt="image"
+                  />
+                </div>
               ))}
             </div>
           </div>

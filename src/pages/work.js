@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/Work.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { releaseMenuOpen, selectMenuOpen } from "../features/menuOpenSlice";
-import MainMenu from "../components/MainMenu";
-import works from "../../works";
+import {
+  grabCategory,
+  selectCategories,
+  selectCategory,
+} from "../features/categorySlice";
+// import MainMenu from "../components/MainMenu";
+// import works from "../../works";
 
-const work = () => {
+const work = ({}) => {
   const [category, setCategory] = useState("all");
+  const allCategories = useSelector(selectCategories);
+  const chosenCategory = useSelector(selectCategory);
   const dispatch = useDispatch();
   const menuIsOpen = useSelector(selectMenuOpen);
   const router = useRouter();
@@ -18,7 +25,28 @@ const work = () => {
     dispatch(releaseMenuOpen());
   };
 
-  console.log("query", router.query);
+  // useEffect(() => {
+  //   closeMenu();
+  // }, [menuIsOpen]);
+
+  const chooseCategory = (e) => {
+    console.log("clicked this one -> ", e);
+    dispatch(
+      grabCategory({
+        title: e.title,
+        imageFolder: e.imageFolder,
+        images: e.images,
+      })
+    );
+
+    db.collection("category").set({
+      title: e.title,
+      imageFolder: e.imageFolder,
+      images: e.images,
+    });
+  };
+
+  console.log(chosenCategory);
 
   return (
     <div
@@ -29,14 +57,14 @@ const work = () => {
         <div className={styles.work__pageHeader}>
           <div className={styles.work__firstName}>
             <Image
-              src="/sarah-logo(first-black).jpg"
+              src="/sarah-logo(first-black).png"
               width={162.5}
               height={97}
             />
           </div>
           <div className={styles.work__lastName}>
             <Image
-              src="/sarah-logo(last-black).jpg"
+              src="/sarah-logo(last-black).png"
               width={155.925}
               height={130.35}
             />
@@ -94,29 +122,23 @@ const work = () => {
                 </div>
               </div>
               <div className={styles.work__subjects}>
-                {works.map((work) => (
-                  <Link
-                    href={{
-                      pathname: "/category",
-                      query: {
-                        title: work.title,
-                        imageFolder: work.imageFolder,
-                        images: work.images,
-                      },
-                    }}
-                    as={work.url}
-                    key={work.title}
-                  >
+                {allCategories.map((subject) => (
+                  <Link href={subject.url} key={subject.id}>
                     <a
-                      className={` ${styles.work__subject} ${
-                        work.category.includes(category) &&
+                      className={`${styles.work__subject} ${
+                        subject.category.includes(category) &&
                         styles.work__included
                       }`}
+                      onClick={() => chooseCategory(subject)}
                     >
                       <div className={styles.work__subjectTitle}>
-                        {work.title}
+                        {subject.title}
                       </div>
-                      <Image src={work.image} layout="fill" objectFit="cover" />
+                      <Image
+                        src={subject.image}
+                        layout="fill"
+                        objectFit="cover"
+                      />
                     </a>
                   </Link>
                 ))}

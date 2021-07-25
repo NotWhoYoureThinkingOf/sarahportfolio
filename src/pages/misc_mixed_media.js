@@ -3,7 +3,7 @@ import styles from "../styles/CategoryPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { releaseMenuOpen, selectMenuOpen } from "../features/menuOpenSlice";
 
-const nature_photography = () => {
+const misc_mixed_media = () => {
   const dispatch = useDispatch();
   const menuIsOpen = useSelector(selectMenuOpen);
 
@@ -18,9 +18,9 @@ const nature_photography = () => {
       }`}
       onClick={closeMenu}
     >
-      <h1>this is the nature photo page</h1>
+      <h1>this is the misc mixed media page</h1>
     </div>
   );
 };
 
-export default nature_photography;
+export default misc_mixed_media;

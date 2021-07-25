@@ -12,7 +12,9 @@ const Layout = ({ children }) => {
   const dispatch = useDispatch();
 
   const openMenu = () => {
+    console.log("menuOpen", menuOpen);
     dispatch(grabMenuOpen());
+    console.log("menuOpen", menuOpen);
   };
 
   console.log(menuOpen);

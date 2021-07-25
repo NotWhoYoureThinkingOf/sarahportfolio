@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../styles/CategoryPage.module.css";
+import styles from "../styles/About.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { releaseMenuOpen, selectMenuOpen } from "../features/menuOpenSlice";
 
-const nature_photography = () => {
+const about = () => {
   const dispatch = useDispatch();
   const menuIsOpen = useSelector(selectMenuOpen);
 
@@ -13,14 +13,12 @@ const nature_photography = () => {
 
   return (
     <div
-      className={`${styles.categoryPage} ${
-        menuIsOpen ? styles.categoryPage__menuOpen : ""
-      }`}
+      className={`${styles.about} ${menuIsOpen ? styles.about__menuOpen : ""}`}
       onClick={closeMenu}
     >
-      <h1>this is the nature photo page</h1>
+      <h1>about page</h1>
     </div>
   );
 };
 
-export default nature_photography;
+export default about;

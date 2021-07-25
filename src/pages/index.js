@@ -44,9 +44,7 @@ export default function Home() {
                 accepted.
               </p>
               <Link href="/work">
-                <button className={styles.home__bannerLeftButton}>
-                  View Work
-                </button>
+                <a className={styles.home__bannerLeftButton}>View Work</a>
               </Link>
             </div>
           </div>

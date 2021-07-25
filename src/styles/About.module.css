@@ -1,0 +1,12 @@
+.about{
+  z-index:10;
+  background:white;
+  transform-origin: right;
+  transition: all .5s ease-out; 
+  height: 100vh;
+}
+
+.about__menuOpen{
+  transform: scale(1) perspective(250px) rotateY(-5deg);
+  cursor:pointer;
+}

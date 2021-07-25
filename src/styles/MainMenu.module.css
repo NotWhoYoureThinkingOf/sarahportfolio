@@ -26,7 +26,7 @@
 .mainMenu__container a{
   font-size:5rem;
   opacity:0;
-  transition:opacity 1s ease;
+  transition:opacity .2s ease;
 }
 
 .mainMenu__menuOpen{
