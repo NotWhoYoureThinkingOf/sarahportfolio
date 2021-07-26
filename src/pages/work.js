@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import styles from "../styles/Work.module.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,7 +12,7 @@ import {
   selectCategory,
 } from "../features/categorySlice";
 // import MainMenu from "../components/MainMenu";
-// import works from "../../works";
+import works from "../../works";
 
 const work = ({}) => {
   const [category, setCategory] = useState("all");
@@ -38,18 +39,12 @@ const work = ({}) => {
         images: e.images,
       })
     );
-
-    db.collection("category").set({
-      title: e.title,
-      imageFolder: e.imageFolder,
-      images: e.images,
-    });
   };
 
   console.log(chosenCategory);
 
   return (
-    <div
+    <motion.div
       className={`${styles.work} ${menuIsOpen && styles.work__menuOpen}`}
       onClick={closeMenu}
     >
@@ -122,23 +117,28 @@ const work = ({}) => {
                 </div>
               </div>
               <div className={styles.work__subjects}>
-                {allCategories.map((subject) => (
-                  <Link href={subject.url} key={subject.id}>
+                {works.map((subject) => (
+                  <Link
+                    href="/category/[id]"
+                    as={`/category${subject.url}`}
+                    key={subject.id}
+                  >
                     <a
                       className={`${styles.work__subject} ${
                         subject.category.includes(category) &&
                         styles.work__included
                       }`}
-                      onClick={() => chooseCategory(subject)}
+                      // onClick={() => chooseCategory(subject)}
                     >
                       <div className={styles.work__subjectTitle}>
                         {subject.title}
                       </div>
-                      <Image
+                      {/* <Image
                         src={subject.image}
                         layout="fill"
                         objectFit="cover"
-                      />
+                      /> */}
+                      <img src={subject.image} alt={subject.title} />
                     </a>
                   </Link>
                 ))}
@@ -148,7 +148,7 @@ const work = ({}) => {
         </div>
       </div>
       {/* <MainMenu /> */}
-    </div>
+    </motion.div>
   );
 };
 
