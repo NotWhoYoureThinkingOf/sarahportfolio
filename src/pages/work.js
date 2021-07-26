@@ -119,8 +119,8 @@ const work = ({}) => {
               <div className={styles.work__subjects}>
                 {works.map((subject) => (
                   <Link
-                    href="/category/[id]"
-                    as={`/category${subject.url}`}
+                    href={`${subject.url}`}
+                    // as={`/category${subject.url}`}
                     key={subject.id}
                   >
                     <a

@@ -3,7 +3,10 @@ import Image from "next/image";
 import Router, { useRouter } from "next/router";
 import styles from "../../../styles/CategoryPage.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectMenuOpen } from "../../../features/menuOpenSlice";
+import {
+  releaseMenuOpen,
+  selectMenuOpen,
+} from "../../../features/menuOpenSlice";
 import { selectCategory } from "../../../features/categorySlice";
 import works from "../../../../works";
 
