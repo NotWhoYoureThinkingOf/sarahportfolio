@@ -53,15 +53,15 @@ const work = ({}) => {
           <div className={styles.work__firstName}>
             <Image
               src="/sarah-logo(first-black).png"
-              width={162.5}
-              height={97}
+              layout="fill"
+              objectFit="contain"
             />
           </div>
           <div className={styles.work__lastName}>
             <Image
               src="/sarah-logo(last-black).png"
-              width={155.925}
-              height={130.35}
+              layout="fill"
+              objectFit="contain"
             />
           </div>
         </div>
